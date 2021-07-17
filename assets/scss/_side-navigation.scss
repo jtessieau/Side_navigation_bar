@@ -1,66 +1,60 @@
 .side-navigation {
-    position: fixed;
     display: flex;
     flex-direction: column;
-    height: 100%;
     width: 70px;
-    padding: 10px 10px;
-
-    overflow: scroll;
-    /* Hide scrollbar for Chrome, Safari and Opera */
-    &::-webkit-scrollbar {
-        display: none;
-    }
-    /* Hide scrollbar for IE, Edge and Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    padding: 10px 15px;
+    margin-right: 30px;
+    transition: 0.4s;
 
     color: white;
     background-color: hsl(0, 0%, 15%);
 
     .logo {
-        width: 100%;
         display: flex;
         align-items: center;
-        justify-content: center;
         margin-top: 1rem;
         margin-bottom: 2rem;
 
         .logo-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: olivedrab;
             font-size: 200%;
+            width: 40px;
+            height: 40px;
         }
 
         .logo-text {
-            display: none;
-            margin-left: 1rem;
+            margin-left: 0.5rem;
+            font-size: 150%;
         }
     }
 
     .searchbar {
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: center;
-        align-items: center;
         margin-bottom: 1rem;
-        width: 100%;
-        border-radius: 40px;
-        clip-path: circle();
-        line-height: 2rem;
-        height: 2rem;
-        background-color: white;
+        position: relative;
 
         input {
-            display: none;
-            background: none;
+            position: absolute;
             outline: none;
             border: none;
-            margin-left: 10px;
+            width: 100%;
+            border-radius: 40px;
+            line-height: 40px;
+            height: 40px;
+            padding-left: 40px;
         }
 
         .search-icon {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
             color: black;
-            transform: translateY(1px);
             cursor: pointer;
         }
     }
@@ -71,9 +65,8 @@
 
             a {
                 display: flex;
-                height: 3rem;
+                height: 40px;
                 align-items: center;
-                justify-content: center;
 
                 text-decoration: none;
                 color: inherit;
@@ -89,16 +82,30 @@
                 }
 
                 .nav-text {
-                    display: none;
                     margin-left: 0.4rem;
+                }
+                .nav-icon {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 120%;
+                    width: 40px;
+                    height: 40px;
                 }
             }
         }
     }
 
     .logout {
-        width: 100%;
         margin-top: auto;
+    }
+
+    .logout a {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 38px;
         border: 1px solid hsl(0, 0%, 25%);
         background-color: hsl(0, 0%, 10%);
         color: hsl(0, 0%, 100%);
@@ -106,46 +113,29 @@
         justify-content: center;
 
         border-radius: 10px;
-        padding: 0.5rem 0.5rem;
 
         &:hover {
             background-color: hsl(0, 0%, 100%);
             color: hsl(0, 0%, 10%);
         }
+
+        .logout-text {
+            margin-left: 0.4rem;
+        }
     }
+}
+
+.toggle-visibility {
+    white-space: nowrap;
+    display: none;
 }
 
 @media (min-width: 769px) {
     .side-navigation {
         width: 260px;
-        padding: 10px 20px;
+    }
 
-        .logo {
-            justify-content: flex-start;
-            .logo-text {
-                display: inline;
-            }
-        }
-
-        .searchbar {
-            clip-path: none;
-            padding-left: 30px;
-            input {
-                display: block;
-            }
-            .search-icon {
-            }
-        }
-
-        .nav-menu {
-            .nav-item {
-                a {
-                    justify-content: flex-start;
-                    .nav-text {
-                        display: block;
-                    }
-                }
-            }
-        }
+    .toggle-visibility {
+        display: block;
     }
 }
