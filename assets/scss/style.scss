@@ -1,6 +1,8 @@
 @import "reset";
+@import "generic";
 @import "side-navigation";
 
 body {
     display: flex;
+    align-items: stretch;
 }
